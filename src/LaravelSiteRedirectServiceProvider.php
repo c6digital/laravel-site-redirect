@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace C6Digital\LaravelSiteRedirect;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\SkeletonCommand;
+use C6Digital\LaravelSiteRedirect\Commands\LaravelSiteRedirectCommand;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class LaravelSiteRedirectServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,10 +16,10 @@ class SkeletonServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('skeleton')
+            ->name('laravel-site-redirect')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_skeleton_table')
-            ->hasCommand(SkeletonCommand::class);
+            ->hasMigration('create_laravel-site-redirect_table')
+            ->hasCommand(LaravelSiteRedirectCommand::class);
     }
 }

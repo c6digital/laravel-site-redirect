@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "c6digital/laravel-site-redirect",
+    "description": "A small package to redirect all requests elsewhere.",
     "keywords": [
-        ":vendor_name",
+        "c6digital",
         "laravel",
-        ":package_slug"
+        "laravel-site-redirect"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/c6digital/laravel-site-redirect",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Ryan Chandler",
+            "email": "support@ryangjchandler.co.uk",
             "role": "Developer"
         }
     ],
@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "C6Digital\\LaravelSiteRedirect\\": "src/",
+            "C6Digital\\LaravelSiteRedirect\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/"
+            "C6Digital\\LaravelSiteRedirect\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -61,10 +61,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "C6Digital\\LaravelSiteRedirect\\LaravelSiteRedirectServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "LaravelSiteRedirect": "C6Digital\\LaravelSiteRedirect\\Facades\\LaravelSiteRedirect"
             }
         }
     },

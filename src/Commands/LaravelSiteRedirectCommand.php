@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace C6Digital\LaravelSiteRedirect\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelSiteRedirectCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-site-redirect';
 
     public $description = 'My command';
 
