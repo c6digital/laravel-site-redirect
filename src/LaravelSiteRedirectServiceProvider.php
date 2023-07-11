@@ -3,8 +3,8 @@
 namespace C6Digital\LaravelSiteRedirect;
 
 use C6Digital\LaravelSiteRedirect\Middleware\SiteRedirect;
-use Spatie\LaravelPackageTools\Package;
 use Illuminate\Contracts\Http\Kernel;
+use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class LaravelSiteRedirectServiceProvider extends PackageServiceProvider
