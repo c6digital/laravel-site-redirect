@@ -2,9 +2,9 @@
 
 namespace C6Digital\LaravelSiteRedirect\Tests;
 
+use C6Digital\LaravelSiteRedirect\LaravelSiteRedirectServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use C6Digital\LaravelSiteRedirect\LaravelSiteRedirectServiceProvider;
 
 class TestCase extends Orchestra
 {

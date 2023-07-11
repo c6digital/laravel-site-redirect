@@ -3,7 +3,6 @@
 use C6Digital\LaravelSiteRedirect\Middleware\SiteRedirect;
 use Illuminate\Support\Facades\Route;
 use function Pest\Laravel\get;
-use function Pest\Laravel\withoutExceptionHandling;
 
 beforeEach(function () {
     Route::get('/', fn () => 'Hello, world!')

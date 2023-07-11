@@ -1,6 +1,7 @@
 <?php
 
 namespace C6Digital\LaravelSiteRedirect\Middleware;
+
 use Closure;
 use Illuminate\Http\Request;
 
