@@ -1,12 +1,10 @@
 <?php
 
-use C6Digital\LaravelSiteRedirect\Middleware\SiteRedirect;
 use Illuminate\Support\Facades\Route;
 use function Pest\Laravel\get;
 
 beforeEach(function () {
-    Route::get('/', fn () => 'Hello, world!')
-        ->middleware(SiteRedirect::class);
+    Route::get('/', fn () => 'Hello, world!');
 });
 
 it('does not redirect when disabled', function () {

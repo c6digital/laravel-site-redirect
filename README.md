@@ -23,21 +23,14 @@ php artisan vendor:publish --tag="laravel-site-redirect-config"
 
 ## Usage
 
-Register the middleware globally inside of `app/Http/Kernel.php`
-
-```php
-protected $middleware = [
-    // ...
-    \C6Digital\LaravelSiteRedirect\Middleware\SiteRedirect::class,
-];
-```
-
-Then use environment variables to enable & disable the redirect and configure the redirect location.
+Use environment variables to enable & disable the redirect and configure the redirect location.
 
 ```sh
 SITE_REDIRECT_ENABLED=true
 SITE_REDIRECT_LOCATION=https://my-site.test
 ```
+
+> The middleware that handles the redirect is registered globally by the package.
 
 ## Testing
 
