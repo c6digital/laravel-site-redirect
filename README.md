@@ -5,29 +5,14 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/c6digital/laravel-site-redirect/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/c6digital/laravel-site-redirect/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/c6digital/laravel-site-redirect.svg?style=flat-square)](https://packagist.org/packages/c6digital/laravel-site-redirect)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-site-redirect.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-site-redirect)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+This package can be used to redirect all requests to a site elsewhere with the flick of an environment variable.
 
 ## Installation
 
-You can install the package via composer:
+You can install the package via Composer:
 
 ```bash
 composer require c6digital/laravel-site-redirect
-```
-
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="laravel-site-redirect-migrations"
-php artisan migrate
 ```
 
 You can publish the config file with:
@@ -36,24 +21,22 @@ You can publish the config file with:
 php artisan vendor:publish --tag="laravel-site-redirect-config"
 ```
 
-This is the contents of the published config file:
+## Usage
+
+Register the middleware globally inside of `app/Http/Kernel.php`
 
 ```php
-return [
+protected $middleware = [
+    // ...
+    \C6Digital\LaravelSiteRedirect\Middleware\SiteRedirect::class,
 ];
 ```
 
-Optionally, you can publish the views using
+Then use environment variables to enable & disable the redirect and configure the redirect location.
 
-```bash
-php artisan vendor:publish --tag="laravel-site-redirect-views"
-```
-
-## Usage
-
-```php
-$laravelSiteRedirect = new C6Digital\LaravelSiteRedirect();
-echo $laravelSiteRedirect->echoPhrase('Hello, C6Digital!');
+```sh
+SITE_REDIRECT_ENABLED=true
+SITE_REDIRECT_LOCATION=https://my-site.test
 ```
 
 ## Testing
