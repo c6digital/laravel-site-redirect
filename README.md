@@ -32,6 +32,24 @@ SITE_REDIRECT_LOCATION=https://my-site.test
 
 > The middleware that handles the redirect is registered globally by the package.
 
+### Bypassing redirects
+
+There are times when you want to allow somebody to bypass the redirect mechanism. This can be achieved with a "bypass token".
+
+Start by specifying the bypass token as an environment variables.
+
+```
+SITE_REDIRECT_BYPASS_TOKEN=example-token
+```
+
+To bypass the redirect, simply provide the bypass token in the query string of the request.
+
+```
+https://my-site.test/?bypass_token=example-token
+```
+
+This will let you access the site as normal. The bypass will be active for 1 hour so subsequent requests will not require a token.
+
 ## Testing
 
 ```bash
