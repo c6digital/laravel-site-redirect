@@ -27,7 +27,7 @@ it('allows bypassing the redirect when a bypass token is provided', function () 
     config()->set([
         'site-redirect.enabled' => true,
         'site-redirect.location' => 'https://c6digital.io',
-        'site-redirect.bypass_token' => 'bypass'
+        'site-redirect.bypass_token' => 'bypass',
     ]);
 
     get('/?bypass_token=bypass')
@@ -38,7 +38,7 @@ it('auto bypasses for 1 hour after initial bypass', function () {
     config()->set([
         'site-redirect.enabled' => true,
         'site-redirect.location' => 'https://c6digital.io',
-        'site-redirect.bypass_token' => 'bypass'
+        'site-redirect.bypass_token' => 'bypass',
     ]);
 
     get('/?bypass_token=bypass')
