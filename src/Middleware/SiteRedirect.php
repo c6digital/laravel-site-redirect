@@ -9,6 +9,11 @@ class SiteRedirect
 {
     public function handle(Request $request, Closure $next)
     {
+        // We don't want to require a bypass token for Livewire requests.
+        if ($request->hasHeader('X-Livewire')) {
+            return $next($request);
+        }
+
         $bypassToken = config('site-redirect.bypass_token') !== null;
 
         if ($bypassToken !== null && session('site-redirect:bypassed') && session('site-redirect:bypassed') >= now()->getTimestamp()) {
