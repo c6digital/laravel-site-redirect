@@ -14,13 +14,13 @@ class SiteRedirect
             return $next($request);
         }
 
-        $bypassToken = config('site-redirect.bypass_token') !== null;
+        $bypassToken = config('site-redirect.bypass_token');
 
         if ($bypassToken !== null && session('site-redirect:bypassed') && session('site-redirect:bypassed') >= now()->getTimestamp()) {
             return $next($request);
         }
 
-        if ($bypassToken !== null && $request->query('bypass_token') !== null && $request->query('bypass_token') === config('site-redirect.bypass_token')) {
+        if ($bypassToken !== null && $request->query('bypass_token') !== null && $request->query('bypass_token') === $bypassToken) {
             session()->put('site-redirect:bypassed', now()->addHour()->getTimestamp());
 
             return $next($request);
