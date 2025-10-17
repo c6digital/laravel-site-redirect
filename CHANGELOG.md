@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-site-redirect` will be documented in this file.
 
+## v1.0.0 - 2025-10-17
+
+Add Laravel 12 support; remove Laravel 10 support
+
 ## v0.2.0 - 2024-03-26
 
 * Laravel 11.x support.
